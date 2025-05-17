@@ -11,9 +11,11 @@ variable "vpc_id" {
 variable "alb_sg_id" {
   description = "Security group ID for the ALB to allow ECS traffic"
   type        = string
+  default     = ""
 }
 
 variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
+  default     = {}
 }

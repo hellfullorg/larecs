@@ -71,6 +71,7 @@ variable "ecs_sg_id" {
 variable "desired_count" {
   description = "Number of ECS tasks to run"
   type        = number
+  default     = 1
 }
 
 variable "environment" {
@@ -85,3 +86,72 @@ variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
 }
+
+variable "project" {
+  description = "Project name"
+  type        = string
+}
+
+variable "env" {
+  description = "Environment name"
+  type        = string
+}
+
+variable "vpc_cidr" {
+  description = "CIDR block for the VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "public_subnet_cidrs" {
+  description = "List of CIDRs for public subnets"
+  type        = list(string)
+  default     = ["10.0.1.0/24", "10.0.2.0/24"]
+}
+
+variable "private_subnet_cidrs" {
+  description = "List of CIDRs for private subnets"
+  type        = list(string)
+  default     = ["10.0.3.0/24", "10.0.4.0/24"]
+}
+
+variable "availability_zones" {
+  description = "List of availability zones to use"
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b"]
+}
+
+variable "cloudflare_api_token" {
+  description = "Cloudflare API token"
+  type        = string
+  sensitive   = true
+}
+
+variable "cloudflare_account_id" {
+  description = "Cloudflare account ID"
+  type        = string
+}
+
+variable "domain_name" {
+  description = "Root domain name"
+  type        = string
+}
+
+variable "app_subdomain" {
+  description = "Subdomain for the application"
+  type        = string
+  default     = "app"
+}
+
+variable "aws_region" {
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "eu-west-1"
+}
+
+variable "environment" {
+  description = "Environment name (e.g., dev, staging, prod)"
+  type        = string
+  default     = "dev"
+}
+
