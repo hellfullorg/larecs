@@ -14,7 +14,7 @@ resource "cloudflare_record" "app" {
   type    = "CNAME"
   proxied = true
 }
-
+ 
 resource "cloudflare_page_rule" "https" {
   zone_id = cloudflare_zone.this.id
   target  = "${var.app_subdomain}.${var.domain_name}/*"
