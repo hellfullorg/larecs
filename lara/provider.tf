@@ -3,13 +3,9 @@ provider "aws" {
 
   default_tags {
     tags = {
-      Environment = var.environment
+      Environment = terraform.workspace
       Project     = "larecs"
       ManagedBy   = "terraform"
     }
   }
-}
-
-provider "cloudflare" {
-  api_token = var.cloudflare_api_token
 }

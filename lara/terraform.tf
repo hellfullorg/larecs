@@ -1,5 +1,12 @@
 terraform {
-  required_version = ">= 1.0.0"
+  cloud {
+    organization = "hellfull"
+
+    workspaces {
+      tags = ["project:lara"]
+    }
+   
+  }
 
   required_providers {
     aws = {

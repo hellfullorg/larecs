@@ -149,9 +149,3 @@ variable "aws_region" {
   default     = "eu-west-1"
 }
 
-variable "environment" {
-  description = "Environment name (e.g., dev, staging, prod)"
-  type        = string
-  default     = "dev"
-}
-
