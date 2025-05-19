@@ -13,33 +13,8 @@ variable "redis_name" {
   type        = string
 }
 
-variable "private_subnet_ids" {
-  description = "List of private subnet IDs"
-  type        = list(string)
-}
-
-variable "public_subnet_ids" {
-  description = "List of public subnet IDs"
-  type        = list(string)
-}
-
-variable "redis_sg_id" {
-  description = "Security group ID for Redis"
-  type        = string
-}
-
 variable "alb_name" {
   description = "Name for the ALB"
-  type        = string
-}
-
-variable "vpc_id" {
-  description = "VPC ID"
-  type        = string
-}
-
-variable "alb_sg_id" {
-  description = "Security group ID for the ALB"
   type        = string
 }
 
@@ -147,5 +122,10 @@ variable "aws_region" {
   description = "AWS region to deploy resources"
   type        = string
   default     = "eu-west-1"
+}
+
+variable "certificate_arn" {
+  description = "ARN of the SSL certificate for the ALB"
+  type        = string
 }
 

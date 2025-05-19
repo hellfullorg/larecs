@@ -3,9 +3,8 @@ terraform {
     organization = "hellfull"
 
     workspaces {
-      tags = ["lara"]
+      tags = ["layer:lara"]
     }
-   
   }
 
   required_providers {
@@ -18,4 +17,4 @@ terraform {
       version = "~> 4.0"
     }
   }
-} 
+}
