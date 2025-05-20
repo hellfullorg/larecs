@@ -1,4 +1,15 @@
 provider "aws" {
-  region  = "eu-west-1"
-  profile = "terraform-dev"
+  region = local.tfvars.aws_region
+
+  default_tags {
+    tags = {
+      Environment = terraform.workspace
+      Project     = "larecs"
+      ManagedBy   = "terraform"
+    }
+  }
+}
+
+provider "cloudflare" {
+  api_token = local.tfvars.cloudflare_api_token
 }

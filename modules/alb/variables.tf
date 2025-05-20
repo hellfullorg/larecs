@@ -23,6 +23,11 @@ variable "health_check_path" {
   type        = string
 }
 
+variable "certificate_arn" {
+  description = "ARN of the SSL certificate for HTTPS listener"
+  type        = string
+}
+
 variable "tags" {
   description = "Tags to apply to resources"
   type        = map(string)

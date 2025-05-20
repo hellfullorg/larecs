@@ -3,8 +3,8 @@
 *.tfstate.backup
 .terraform/
 crash.log
-*.tfvars
-*.tfvars.json
+#*.tfvars
+#*.tfvars.json
 
 # Python virtualenvs (if any)
 .venv/

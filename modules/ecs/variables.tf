@@ -52,3 +52,14 @@ variable "environment" {
   description = "Environment variables for the Laravel container"
   default     = []
 }
+
+variable "target_group_arn" {
+  type        = string
+  description = "ARN of the ALB target group"
+}
+
+variable "tags" {
+  type        = map(string)
+  description = "Tags to apply to resources"
+  default     = {}
+}

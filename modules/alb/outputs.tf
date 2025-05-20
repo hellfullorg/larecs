@@ -17,3 +17,8 @@ output "listener_arn" {
   description = "ARN of the HTTP listener"
   value       = aws_lb_listener.http.arn
 }
+
+output "alb_arn_suffix" {
+  description = "The ARN suffix of the ALB. Useful for CloudWatch alarms."
+  value       = aws_lb.this.arn_suffix
+}
