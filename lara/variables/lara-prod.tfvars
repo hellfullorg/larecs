@@ -20,6 +20,7 @@ project: "larecs"
 env: "prod"
 certificate_arn: ""
 
+
 tags:
   Environment: "prod"
   Project: "larecs"
