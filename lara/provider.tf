@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.aws_region
+  region = local.tfvars.aws_region
 
   default_tags {
     tags = {
@@ -8,4 +8,8 @@ provider "aws" {
       ManagedBy   = "terraform"
     }
   }
+}
+
+provider "cloudflare" {
+  api_token = local.tfvars.cloudflare_api_token
 }

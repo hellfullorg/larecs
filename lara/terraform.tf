@@ -3,7 +3,7 @@ terraform {
     organization = "hellfull"
 
     workspaces {
-      tags = ["layer:lara"]
+      tags = ["layer:laravel"]
     }
   }
 

@@ -1,15 +1,17 @@
+# Temporarily disabled Cloudflare configuration
+/*
 provider "cloudflare" {
-  api_token = var.cloudflare_api_token
+  api_token = local.tfvars.cloudflare_api_token
 }
 
 resource "cloudflare_zone" "this" {
-  account_id = var.cloudflare_account_id
-  zone       = var.domain_name
+  account_id = local.tfvars.cloudflare_account_id
+  zone       = local.tfvars.domain_name
 }
 
 resource "cloudflare_record" "app" {
   zone_id = cloudflare_zone.this.id
-  name    = var.app_subdomain
+  name    = local.tfvars.app_subdomain
   value   = module.alb.alb_dns_name
   type    = "CNAME"
   proxied = true
@@ -17,7 +19,7 @@ resource "cloudflare_record" "app" {
  
 resource "cloudflare_page_rule" "https" {
   zone_id = cloudflare_zone.this.id
-  target  = "${var.app_subdomain}.${var.domain_name}/*"
+  target  = "${local.tfvars.app_subdomain}.${local.tfvars.domain_name}/*"
   priority = 1
 
   actions {
@@ -27,11 +29,12 @@ resource "cloudflare_page_rule" "https" {
 
 resource "cloudflare_page_rule" "cache" {
   zone_id = cloudflare_zone.this.id
-  target  = "${var.app_subdomain}.${var.domain_name}/static/*"
+  target  = "${local.tfvars.app_subdomain}.${local.tfvars.domain_name}/static/*"
   priority = 2
 
   actions {
     cache_level = "cache_everything"
     edge_cache_ttl = 86400
   }
-} 
+}
+*/ 
